@@ -46,14 +46,12 @@ int contarParesEnPosicionesImpares(int arreglo[], unsigned int n)
     return 0;
   }
 
-  n = n - 1;
-
-  if ((n % 2 == 0) && (arreglo[n] % 2 == 0))
+  if ((n % 2 == 0) && (arreglo[n - 1] % 2 == 0))
   {
-    return 1 + contarParesEnPosicionesImpares(arreglo, n);
+    return 1 + contarParesEnPosicionesImpares(arreglo, n - 1);
   }
   else
   {
-    return contarParesEnPosicionesImpares(arreglo, n);
+    return contarParesEnPosicionesImpares(arreglo, n - 1);
   }
 }
